@@ -1,5 +1,4 @@
 
-
 ## Part 1 
 
 def parse_input():

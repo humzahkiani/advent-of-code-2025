@@ -23,11 +23,7 @@ def is_invalid(id):
     first_half = str_id[0:num_digits//2]
     second_half = str_id[num_digits//2:]
 
-    if first_half == second_half:
-        return True
-
-    return False
-
+    return first_half == second_half
 
 # print(f"{is_invalid(123123)} = True")
 # print(f"{is_invalid(11122)} = False")
