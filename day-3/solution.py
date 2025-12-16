@@ -53,7 +53,35 @@ def run_part_one_tests(test_cases):
 
 print(f"Part 1 - Total joltage is {part_one(banks)}")
 
-    
+def part_two(banks):
+    total_joltage = 0
+
+    for bank in banks:
+        BANK_LENGTH = len(bank)
+        num_remaining_digits = 12
+
+        i = 0
+        joltage = 0
+
+        while num_remaining_digits > 0:
+            num_possible_digits = (BANK_LENGTH - i) - num_remaining_digits + 1
+
+            max_digit, max_digit_idx = -1,-1
+
+            for j in range(i,i+num_possible_digits):
+                if bank[j] > digit:
+                    digit, digit_idx = bank[j],j
+
+            joltage += digit * (10**(num_remaining_digits-1))
+            num_remaining_digits -= 1
+            i = digit_idx + 1
+
+        total_joltage += joltage
+
+    return total_joltage
+
+print(f"Part 2 - Total joltage is {part_two(banks)}")
+
 
 
 
